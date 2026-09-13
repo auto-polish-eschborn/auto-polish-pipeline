@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ap_blue">#1554D1</color>
+    <color name="ap_blue_dark">#0B2B67</color>
+    <color name="ap_black">#111318</color>
+    <color name="ap_surface">#F3F5F8</color>
+    <color name="ap_card">#FFFFFF</color>
+    <color name="ap_muted">#667085</color>
+    <color name="ap_border">#D9DEE8</color>
+    <color name="ap_red">#C62828</color>
+    <color name="ap_green">#237A3B</color>
+    <color name="ap_orange">#B85C00</color>
+</resources>

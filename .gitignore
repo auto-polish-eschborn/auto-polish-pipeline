@@ -1,0 +1,14 @@
+# Local build and IDE output
+.gradle/
+**/build/
+.idea/
+*.iml
+local.properties
+
+# Local unpacked source and temporary working files
+work/
+outputs/
+
+# OS files
+.DS_Store
+Thumbs.db

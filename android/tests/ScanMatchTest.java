@@ -1,0 +1,3 @@
+package de.autopolish.nativeapp;
+import org.json.*;
+public class ScanMatchTest {public static void main(String[] args)throws Exception{JSONArray a=new JSONArray("[{\"id\":\"a\",\"number\":\"RAD-9020\"},{\"id\":\"b\",\"number\":\"RAD-90201\"}]");if(ScanMatch.exact(a,"RAD-9020").length()!=1)throw new AssertionError();if(ScanMatch.exact(a," rad-9020 ").length()!=1)throw new AssertionError();if(ScanMatch.exact(a,"RAD-9999").length()!=0)throw new AssertionError();a.put(new JSONObject("{\"id\":\"c\",\"number\":\"RAD-9020\"}"));if(ScanMatch.exact(a,"RAD-9020").length()!=2)throw new AssertionError();System.out.println("4 exact-match tests passed");}}
