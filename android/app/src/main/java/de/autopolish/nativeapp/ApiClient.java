@@ -8,12 +8,20 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 final class ApiClient {
     static final String BASE_URL = "https://auftraege.auto-polish.de";
+    static {
+        // The web API authenticates the login with a session cookie. Keep that
+        // cookie for subsequent requests made by the dashboard and forms.
+        CookieManager manager = new CookieManager(null, CookiePolicy.ACCEPT_ORIGINAL_SERVER);
+        java.net.CookieHandler.setDefault(manager);
+    }
     interface ConnectionFactory { HttpURLConnection open(String path) throws IOException; }
     static ConnectionFactory connections = path -> (HttpURLConnection) new URL(BASE_URL + path).openConnection();
 
